@@ -1,4 +1,5 @@
-\btysiąc\b	1000.
+\b(?:tysiąc|tysięczn[^\s]+)\b	1000.
+(?:tysięczn[^\s]+)\b	1000.
 \bdwa\s+tysiące\b	2000.
 \btrzy\s+tysiące\b	3000.
 \bcztery\s+tysiące\b	4000.
@@ -8,7 +9,8 @@
 \bosiem\s+tysięcy\b	8000.
 \bdziewięć\s+tysięcy\b	9000.
 
-\bsto\b	100.
+\b(?:sto|setn[^\s]+)\b	100.
+\bstu	100. 
 dwieście	200.
 trzysta	300.
 czterysta	400.
@@ -27,6 +29,7 @@ siedemdziesiąt([^\s*])	70.
 osiemdziesiąt([^\s*])	80.
 dziewięćdziesiąt([^\s*])	90.
 
+\bdziesięcio\b	10.
 jedenas([^\s]*)	11.
 dwunas([^\s]*)	12.
 trzynas([^\s]*)	13.
@@ -37,16 +40,16 @@ siedemnas([^\s]*)	17.
 osiemnas([^\s]*)	18.
 dziewiętnas([^\s]*)	19.
 
-pierwsz([^\s]*)	1.
-drug([^\s]*)	2.
-trzec([^\s]*)	3.
-czwart([^\s]*)	4.
-piąt([^\s*])	5.
-szóst([^\s*])	6.
-siód([^\s*])	7.
-ósm([^\s*])	8.
-dziewiąt([^\s*])	9.
-dziesiąt([^\s*])	10.
+(?:pierwsz([^\s]+)|jeden)	1.
+drug([^\s]+)	2.
+trzec([^\s]+)	3.
+czwart([^\s]+)	4.
+piąt([^\s]+)	5.
+szóst([^\s]+)	6.
+siód([^\s]+)	7.
+ósm([^\s]+)	8.
+dziewiąt([^\s]+)	9.
+dziesiąt([^\s]+)	10.
 
 # merge number
 \b(\d)0\.\s+(\d)\.$	$1$2.
@@ -55,3 +58,4 @@ dziesiąt([^\s*])	10.
 \b(\d)000\.\s+(\d{3})\.$	$1$2.
 \b(\d0)00\.\s+(\d{2})\.$	$1$2.
 \b(\d00)0\.\s+(\d{1})\.$	$1$2.
+\b(\d{2,3})\.\s+1(000)\.$	$1$2.
